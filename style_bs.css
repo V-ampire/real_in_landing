@@ -265,11 +265,17 @@ img {
     object-fit: contain;
 }
 
+.benefits .row {
+    justify-content: center; /* центрируем колонки внутри строки */
+}
+
+/* Ограничиваем ширину колонок, но оставляем контент выровненным по левому краю */
 .benefits .col-md-6 {
+    max-width: 28rem; /* или любая удобная ширина */
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* карточки выравниваются по левому краю */
-    gap: 1.5rem;
+    align-items: flex-start; /* контент внутри колонки слева */
 }
 
 .benefits .text-start {
