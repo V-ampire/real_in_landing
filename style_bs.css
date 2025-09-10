@@ -125,11 +125,29 @@ a {
 }
 
 
-
 a:hover {
     text-decoration: none;
 }
 
+
+.hover-zoom {
+    transition: transform 0.8s ease-in-out; /* плавный и естественный переход */
+}
+
+.hover-zoom:hover {
+    transform: scale(1.10); /* увеличение на 10% */
+}
+
+.section-animate {
+    opacity: 0;                   /* невидимый */
+    transform: translateY(40px);  /* чуть большее смещение вниз */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* более медленный и плавный переход */
+}
+
+.section-animate.visible {
+    opacity: 1;                   /* становится видимым */
+    transform: translateY(0);     /* поднимается на место */
+}
 
 
 /* Текст */
@@ -422,7 +440,7 @@ img {
 
 
 
-
+/* Statictics section */
 .statistics {
     background: #f8f9fa;
     padding: 60px 0;
@@ -484,6 +502,7 @@ img {
 }
 
 
+/* FAQ section */
 .faq {
     background: white;
     padding: 80px 0;
@@ -533,6 +552,10 @@ img {
     transition: transform 0.3s ease;
 }
 
+.accordion {
+    margin: 0 15%;
+}
+
 .faq-item .accordion-button:not(.collapsed) .faq-toggle {
     transform: rotate(45deg);
 }
@@ -552,28 +575,26 @@ img {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+
+/* Final CTA Section */
 .final-cta {
     background: #f8f9fa;
-    padding: 80px 0;
 }
 
 .cta-text {
-    font-family: 'Unbounded', sans-serif;
-}
-
-.cta-text h2 {
     font-family: 'Unbounded', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
     color: #1a1a1a;
+    margin-bottom: 40px;
 }
 
 .cta-buttons {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-bottom: 40px;
 }
 
 .secondary-cta {
@@ -596,6 +617,8 @@ img {
     text-decoration: none;
 }
 
+
+/* Form Section */
 .form-section {
     background: white;
     padding: 40px;
@@ -610,6 +633,7 @@ img {
     font-weight: 600;
     margin-bottom: 10px;
     color: #1a1a1a;
+    text-align: center;
 }
 
 .form-section p {
@@ -617,6 +641,7 @@ img {
     color: #666;
     font-size: 0.875rem; /* 14px */
     margin-bottom: 25px;
+    text-align: center;
 }
 
 .form-inputs {
@@ -673,8 +698,7 @@ img {
 
 /* Footer */
 .footer {
-    background: #1a1a1a;
-    color: white;
+    color: #1a1a1a;
     padding: 40px 0;
     font-family: 'Montserrat', sans-serif;
 }
@@ -697,15 +721,11 @@ img {
 }
 
 .footer-links a {
-    color: white;
+    color: #1a1a1a;
     text-decoration: none;
     font-weight: 600;
     cursor: pointer;
     transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #2B5CE6;
 }
 
 .footer-copyright {
