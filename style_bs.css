@@ -120,6 +120,18 @@ h3 {
 }
 
 
+a {
+    text-decoration: none;
+}
+
+
+
+a:hover {
+    text-decoration: none;
+}
+
+
+
 /* Текст */
 p {
     font-family: 'Montserrat', sans-serif;
