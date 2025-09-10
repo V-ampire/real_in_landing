@@ -70,13 +70,20 @@
     font-display: swap;
 }
 
+/* Базовые стили */
+html {
+    font-size: 16px; /* 1rem = 16px */
+}
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 1rem; /* 16px */
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
@@ -85,104 +92,576 @@ body {
 /* Контейнер шире */
 @media (min-width: 1400px) {
   .container {
-    max-width: 1700px;
+    max-width: 106.25rem; /* 1700px / 16 */
   }
 }
 
 /* Заголовки */
 h1 {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 30px;
-  color: #1a1a1a;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 3rem; /* 48px */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.875rem; /* 30px */
+    color: #1a1a1a;
 }
 
 h3 {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #1a1a1a;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600;
+    margin-bottom: 0.9375rem; /* 15px */
+    color: #1a1a1a;
 }
 
 /* Текст */
 p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-  color: #666;
-  margin-bottom: 25px;
-  line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9375rem; /* 15px */
+    color: #666;
+    margin-bottom: 1.5625rem; /* 25px */
+    line-height: 1.6;
 }
 
 strong {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: #1a1a1a;
-  line-height: 1.3;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9375rem; /* 15px */
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.3;
 }
 
 /* Выделение */
 .highlight {
-  color: #2B5CE6;
+    color: #2B5CE6;
 }
 
 /* Кнопки */
-.btn-primary, 
-.btn-outline-primary, 
-.cta-button, 
-.hero-button, 
+.btn-primary,
+.btn-outline-primary,
+.cta-button,
+.hero-button,
 .service-button {
-  font-weight: 600;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-  padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 0.5rem; /* 8px */
+    transition: background 0.3s ease;
+    padding: 0.75rem 1.5rem; /* 12px 24px */
+    font-size: 1rem; /* 16px */
 }
 
-.btn-primary, 
-.cta-button, 
-.hero-button, 
+.btn-primary,
+.cta-button,
+.hero-button,
 .service-button {
-  background: #2B5CE6;
-  color: #fff;
-  border: none;
+    background: #2B5CE6;
+    color: #fff;
+    border: none;
 }
 
-.btn-primary:hover, 
-.cta-button:hover, 
-.hero-button:hover, 
+.btn-primary:hover,
+.cta-button:hover,
+.hero-button:hover,
 .service-button:hover {
-  background: #1e44d4;
-  color: #fff;
+    background: #1e44d4;
+    color: #fff;
 }
 
 .btn-outline-primary {
-  border-color: #2B5CE6;
-  color: #2B5CE6;
+    border-color: #2B5CE6;
+    color: #2B5CE6;
 }
 
 .btn-outline-primary:hover {
-  background: #2B5CE6;
-  color: #fff;
+    background: #2B5CE6;
+    color: #fff;
 }
 
 /* Карточки */
 .card {
-  background: #f8f9fa;
-  border: none;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    background: #f8f9fa;
+    border: none;
+    border-radius: 1rem; /* 16px */
+    padding: 1rem; /* 16px */
+    box-shadow: none; /* убрали тень */
 }
 
 /* Изображения */
 img {
-  border-radius: 20px;
+    border-radius: 1.25rem; /* 20px */
 }
 
 .mobile-app img {
-  max-width: 320px;
-  height: auto;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
+    max-width: 20rem; /* 320px */
+    height: auto;
+    filter: drop-shadow(0 1.25rem 2.5rem rgba(0,0,0,0.2)); /* 20px 40px */
+}
+
+/* Иконки в карточках */
+.card div > div:first-child div:first-child {
+    font-size: 1.75rem; /* 28px для эмодзи 🧠 */
+}
+
+/* Сделаем все SVG иконки одинакового размера */
+.card div > div:last-child img {
+    width: 6rem; /* 48px */
+    height: 6rem; /* одинаковая высота */
+}
+
+
+/* Benefits Section */
+.benefits h1 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.benefits h3 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.benefits h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.benefits p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9375rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Карточки */
+.benefits .card {
+    background: #f8f9fa;
+    border-radius: 1rem;
+    border: none;
+    padding: 1rem;
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    width: 100%;      /* карточка растягивается по ширине колонки */
+    max-width: 28rem; /* фиксированная максимальная ширина */
+}
+
+/* Иконки */
+.benefits .benefit-icon {
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+}
+
+.benefits .benefit-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.benefits .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* карточки выравниваются по левому краю */
+    gap: 1.5rem;
+}
+
+.benefits .text-start {
+    text-align: left;
+}
+
+
+.why-real-in {
+    background: white;
+    padding: 80px 0;
+}
+
+.why-real-in h1 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.why-real-in h3 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+}
+
+.card {
+    background: #f8f9fa;
+    border-radius: 1rem;
+    border: none;
+    padding: 1rem;
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    width: 100%;
+    max-width: 28rem;
+}
+
+.advantage-icon, .investment-icon {
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+    background: #f0f4ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.advantage-icon img, .investment-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(27%) sepia(99%) saturate(3058%) hue-rotate(227deg) brightness(96%) contrast(97%);
+}
+
+.card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.card p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Колонки выравнивание по краям */
+.why-real-in .row {
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.why-real-in .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* карточки по левому краю */
+    gap: 1.5rem;
+}
+
+
+.statistics {
+    background: #f8f9fa;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.statistics h2 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 2rem; /* 32px */
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+
+.statistics strong {
+    color: #2B5CE6;
+}
+
+.avatars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap; /* для адаптивности на мобильных */
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-left: -10px;
+}
+
+.plus-sign {
+    background: white;
+    color: #2B5CE6;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 10px;
+    border: 2px solid #2B5CE6;
+}
+
+.more-users {
+    background: #2B5CE6;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    border: 3px solid white;
+}
+
+
+.faq {
+    background: white;
+    padding: 80px 0;
+}
+
+.faq h1 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #1a1a1a;
+}
+
+.faq-item {
+    background: #f8f9fa;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #1a1a1a;
+    padding: 20px 24px;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #f0f4ff;
+}
+
+.faq-toggle {
+    font-size: 24px;
+    color: #2B5CE6;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.faq-item .accordion-button:not(.collapsed) .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 24px 24px;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+.faq-answer p {
+    margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.final-cta {
+    background: #f8f9fa;
+    padding: 80px 0;
+}
+
+.cta-text {
+    font-family: 'Unbounded', sans-serif;
+}
+
+.cta-text h2 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.secondary-cta {
+    background: transparent;
+    color: #2B5CE6;
+    border: 2px solid #2B5CE6;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.secondary-cta:hover {
+    background: #2B5CE6;
+    color: white;
+    text-decoration: none;
+}
+
+.form-section {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    width: 100%;
+}
+
+.form-section h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.125rem; /* 18px */
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.form-section p {
+    font-family: 'Montserrat', sans-serif;
+    color: #666;
+    font-size: 0.875rem; /* 14px */
+    margin-bottom: 25px;
+}
+
+.form-inputs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .form-inputs {
+        flex-direction: row;
+    }
+}
+
+.form-input {
+    flex: 1;
+    padding: 16px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #2B5CE6;
+    background: white;
+}
+
+.final-button {
+    background: #2B5CE6;
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.final-button:hover {
+    background: #1e44d4;
+    text-decoration: none;
+}
+
+
+/* Footer */
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 40px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-logo img {
+    max-height: 40px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #2B5CE6;
+}
+
+.footer-copyright {
+    color: #888;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 20px;
+    }
 }
