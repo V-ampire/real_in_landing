@@ -226,6 +226,11 @@ img {
     border-radius: 1.25rem; /* 20px */
 }
 
+.main-logo {
+    border-radius: 0px;
+}
+
+
 .mobile-app img {
     max-width: 20rem; /* 320px */
     height: auto;
@@ -241,6 +246,40 @@ img {
 .card div > div:last-child img {
     width: 6rem; /* 48px */
     height: 6rem; /* одинаковая высота */
+}
+
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem; /* сохраняем промежуток между логотипом и кнопкой */
+}
+
+/* Кнопка гибкая */
+header .btn-primary {
+    flex-shrink: 1;       /* позволяет кнопке уменьшаться */
+    white-space: nowrap;   /* текст не переносится */
+    padding: 0.5rem 1rem; /* уменьшаем отступы на мобильных */
+    font-size: 0.875rem;  /* уменьшаем размер текста на мобильных */
+}
+
+/* Адаптивность для маленьких экранов */
+@media (max-width: 768px) {
+    header .btn-primary {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    header .container {
+        gap: 0.5rem; /* можно чуть уменьшить отступ на очень маленьких экранах */
+    }
+}
+
+/* Пример для логотипа, чтобы не уменьшался */
+header .logo img {
+    max-height: 2.5rem;
+    height: auto;
 }
 
 
