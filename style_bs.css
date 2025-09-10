@@ -746,3 +746,184 @@ img {
         gap: 20px;
     }
 }
+
+
+
+/* Container адаптивность */
+@media (max-width: 1400px) {
+  .container {
+    max-width: 90%;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+/* Заголовки */
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 2.5rem; /* 40px */
+  }
+
+  h3 {
+    font-size: 1.375rem; /* 22px */
+  }
+
+  .benefits h1, .why-real-in h1, .faq h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem; /* 32px */
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.25rem; /* 20px */
+    text-align: center;
+  }
+
+  p, strong {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .cta-text {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+/* Benefits адаптивность */
+@media (max-width: 992px) {
+  .benefits .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefits .col-md-6 {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .benefits .card {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Why Real In адаптивность */
+@media (max-width: 992px) {
+  .why-real-in .col-md-6 {
+    max-width: 90%;
+  }
+
+  .cards-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+}
+
+/* Statistics адаптивность */
+@media (max-width: 768px) {
+  .statistics h2 {
+    font-size: 1.75rem;
+  }
+
+  .avatars {
+    gap: -5px;
+  }
+
+  .avatar, .more-users {
+    width: 40px;
+    height: 40px;
+  }
+
+  .plus-sign {
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+  }
+}
+
+/* FAQ адаптивность */
+@media (max-width: 768px) {
+  .accordion {
+    margin: 0 5%;
+  }
+
+  .faq-question {
+    padding: 16px 20px;
+  }
+
+  .faq-answer {
+    padding: 0 20px 16px;
+  }
+}
+
+/* Final CTA */
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .final-button, .secondary-cta {
+    width: 100%;
+  }
+}
+
+/* Form Section */
+@media (max-width: 768px) {
+  .form-section {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .form-inputs {
+    flex-direction: column;
+  }
+
+  .form-input {
+    width: 100%;
+  }
+
+  .final-button {
+    width: 100%;
+  }
+}
+
+/* Footer */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-logo img {
+    max-height: 35px;
+  }
+}
+
+/* Images адаптивность */
+@media (max-width: 768px) {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .mobile-app img {
+    max-width: 100%;
+  }
+}
