@@ -84,9 +84,14 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1700px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-around;
 }
 
 /* Header */
@@ -293,23 +298,26 @@ body {
     overflow: hidden;
 }
 
-.section-title {
-    font-family: 'Unbounded', sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 60px;
-    color: #1a1a1a;
+
+.services .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* две колонки по 50% */
+    gap: 40px;
+    align-items: center;
 }
 
+/* Секция с карточками и заголовком в колонку */
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 40px;
-    max-width: 700px;
-    position: relative;
-    z-index: 2;
-    margin: 0 auto;
+    max-width: 100%; /* убираем ограничение ширины */
+    margin: 0; /* убираем авто-центрирование */
+}
+
+.section-title {
+    text-align: left; /* чтобы заголовок не был по центру */
+    margin-bottom: 20px;
 }
 
 .service-card {
@@ -324,8 +332,8 @@ body {
     position: absolute;
     right: 30px;
     top: 30px;
-    width: 40px;
-    height: 40px;
+    width: 5rem;
+    height: 5rem;
 }
 
 .service-icon img {
@@ -368,11 +376,8 @@ body {
 }
 
 .mobile-app {
-    position: absolute;
-    right: 100px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 3;
+    display: flex;
+    justify-content: center;
 }
 
 .mobile-app img {
