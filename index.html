@@ -6,123 +6,143 @@
   <title>Real In - Твоя квартира в Дубае</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style_bs.css">
+<script src="https://cdn.jsdelivr.net/npm/node-polyglot/build/polyglot.min.js"></script>
+<script src="js/i18n.js" defer></script>
 </head>
 <body>
 
   <!-- Header -->
-  <header class="py-3 shadow-sm bg-white">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="logo">
-        <img class="main-logo" src="icons/logo.svg" alt="Real In" style="height:2.5rem;"> <!-- 40px -->
-      </div>
-      <a href="https://telegram.me/real_in_bot?start=b9458312-0452-494b-8568-c448318d99c5" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Скачать гид по аренде</a>
+<header class="py-3 shadow-sm bg-white">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="logo">
+      <img class="main-logo" src="icons/logo.svg" alt="Real In" style="height:2.5rem;">
     </div>
-  </header>
+    <div class="d-flex gap-2 align-items-center">
+      <div class="lang-switch d-flex gap-2">
+      <div class="lang-toggle">
+        <button id="lang-en" class="active">EN</button>
+        <button id="lang-ru">RU</button>
+      </div>
+      <a href="https://telegram.me/real_in_bot?start=b9458312-0452-494b-8568-c448318d99c5" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="header.download_guide">
+        Скачать гид по аренде
+      </a>
+    </div>
+  </div>
+</header>
 
-  <!-- Hero Section -->
-  <section class="py-5" style="background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%); min-height:37.5rem; display:flex; align-items:center;"> <!-- 600px -->
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <h1>
-            Если можешь представить её, она существует.<br>
-            <span class="highlight">Твоя квартира в Дубае.</span>
-          </h1>
-          <a class="btn btn-primary btn-lg mb-3  hover-zoom" href="https://telegram.me/real_in_bot?start=0babef20-4dbf-4907-abdb-f7f37f4d94fb" target="_blank">
-            Забронировать бесплатный подбор</a>
-          <div class="bg-white p-3 rounded-4 shadow-sm" style="max-width:23.75rem;"> <!-- 380px -->
-            <div class="d-flex gap-3">
-              <div style="font-size:1.75rem;">🧠</div>
-              <div>
-                <strong>Умный поиск недвижимости в Telegram</strong>
-                <p class="mb-0" id="animated-text">Ищу виллу с двумя спальнями в Dubai Marina на 6 месяцев</p>
-              </div>
+<!-- Hero Section -->
+<section class="py-5" style="background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%); min-height:37.5rem; display:flex; align-items:center;">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 data-i18n="hero.title">
+          Если можешь представить её, она существует.<br>
+          <span class="highlight" data-i18n="hero.highlight">Твоя квартира в Дубае.</span>
+        </h1>
+        <a class="btn btn-primary btn-lg mb-3 hover-zoom" href="https://telegram.me/real_in_bot?start=0babef20-4dbf-4907-abdb-f7f37f4d94fb" target="_blank" data-i18n="hero.book_button">
+          Забронировать бесплатный подбор
+        </a>
+        <div class="bg-white p-3 rounded-4 shadow-sm" style="max-width:23.75rem;">
+          <div class="d-flex gap-3">
+            <div style="font-size:1.75rem;">🧠</div>
+            <div>
+              <strong data-i18n="hero.smart_search_title">Умный поиск недвижимости в Telegram</strong>
+              <p class="mb-0" id="animated-text" data-i18n="hero.animated_text">
+                Ищу виллу с двумя спальнями в Dubai Marina на 6 месяцев
+              </p>
             </div>
           </div>
         </div>
-        <div class="col-lg-6 text-end">
-          <img src="images/dubai-skyline.png" alt="Dubai Skyline" class="img-fluid shadow">
-        </div>
+      </div>
+      <div class="col-lg-6 text-end">
+        <img src="images/dubai-skyline.png" alt="Dubai Skyline" class="img-fluid shadow">
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+
 
   <!-- Services Section -->
-  <section class="services py-5 bg-light section-animate">
-    <div class="container">
-      <div class="row g-4 align-items-start">
+<section class="services py-5 bg-light section-animate">
+  <div class="container">
+    <div class="row g-4 align-items-start">
 
-        <!-- Левая колонка: карточки -->
-        <div class="col-md-6 d-flex flex-column align-items-center gap-4">
-          <h1 class="text-center mb-5">Мы предлагаем</h1>
+      <!-- Левая колонка: карточки -->
+      <div class="col-md-6 d-flex flex-column align-items-center gap-4">
+        <h1 class="text-center mb-5" data-i18n="services.title">Real In экосистема для работы с недвижимостьюнового поколения</h1>
 
-          <div class="w-100" style="max-width:31.25rem;"> <!-- 500px -->
+        <div class="w-100" style="max-width:31.25rem;"> <!-- 500px -->
 
-            <!-- Аренда -->
-            <div class="card border-0 h-100 mb-4">
-              <div class="d-flex align-items-center">
-                <div class="flex-grow-1">
-                  <h3 class="mb-3">Аренда</h3>
-                  <p>Найдём идеальную квартиру для жизни с полным сопровождением сделки</p>
-                  <a class="btn btn-primary hover-zoom" href="https://telegram.me/real_in_bot?start=0babef20-4dbf-4907-abdb-f7f37f4d94fb" target="_blank">
-                    Подобрать
-                  </a>
-                </div>
-                <div class="ms-3">
-                  <img src="icons/bxs_key.svg" alt="Key icon">
-                </div>
+          <!-- Аренда -->
+          <div class="card border-0 h-100 mb-4">
+            <div class="d-flex align-items-center">
+              <div class="flex-grow-1">
+                <h3 class="mb-3" data-i18n="services.rent.title">Аренда</h3>
+                <p data-i18n="services.rent.text">
+                  Найдём идеальную квартиру для жизни с полным сопровождением сделки
+                </p>
+                <a data-i18n="services.rent.btn" class="btn btn-primary hover-zoom" href="https://telegram.me/real_in_bot?start=0babef20-4dbf-4907-abdb-f7f37f4d94fb" target="_blank">
+                  Подобрать
+                </a>
+              </div>
+              <div class="ms-3">
+                <img src="icons/bxs_key.svg" alt="Key icon">
               </div>
             </div>
+          </div>
 
-            <!-- Покупка -->
-            <div class="card border-0 h-100">
-              <div class="d-flex align-items-center">
-                <div class="flex-grow-1">
-                  <h3 class="mb-3">Покупка</h3>
-                  <p>Уникальные объекты. Дистресс сделки. ROI-анализ</p>
-                  <a class="btn btn-primary hover-zoom" href="https://telegram.me/real_in_bot?start=0babef20-4dbf-4907-abdb-f7f37f4d94fb" target="_blank">
-                    Подобрать
-                  </a>
-                </div>
-                <div class="ms-3">
-                  <img src="icons/material-symbols-light_real-estate-agent.svg" alt="Buy icon">
-                </div>
+          <!-- Покупка -->
+          <div class="card border-0 h-100">
+            <div class="d-flex align-items-center">
+              <div class="flex-grow-1">
+                <h3 class="mb-3" data-i18n="services.buy.title">Покупка</h3>
+                <p data-i18n="services.buy.text">
+                  Уникальные объекты. Дистресс сделки. ROI-анализ
+                </p>
+                <a data-i18n="services.buy.btn" class="btn btn-primary hover-zoom" href="https://telegram.me/real_in_bot?start=0babef20-4dbf-4907-abdb-f7f37f4d94fb" target="_blank">
+                  Подобрать
+                </a>
+              </div>
+              <div class="ms-3">
+                <img src="icons/material-symbols-light_real-estate-agent.svg" alt="Buy icon">
               </div>
             </div>
-
           </div>
 
-        </div>
-
-        <!-- Правая колонка: картинка -->
-        <div class="col-md-6 d-flex justify-content-center">
-          <div class="mobile-app">
-            <img src="images/mobile-app.png" alt="Mobile App" class="img-fluid">
-          </div>
         </div>
 
       </div>
+
+      <!-- Правая колонка: картинка -->
+      <div class="col-md-6 d-flex justify-content-center">
+      <div class="mobile-app">
+      <img id="services-mobile-app-img" src="images/mobile-app-ru.png" alt="Mobile App" class="img-fluid">
+      </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
 
   <!-- Benefits Section -->
 <section class="benefits py-5 bg-light section-animate">
   <div class="container text-center">
-    <h1 class="mb-5">Превращаем сложности<br>в простые решения</h1>
+    <h1 class="mb-5" data-i18n="benefits.title">Превращаем сложности<br>в простые решения</h1>
     <div class="row g-4 justify-content-center">
 
       <!-- Аренда -->
       <div class="col-md-6 d-flex flex-column gap-4">
-        <h3 class="text-start">Аренда</h3>
+        <h3 class="text-start" data-i18n="services.rent.title">Аренда</h3>
 
         <div class="card d-flex flex-row align-items-start gap-3 p-3">
           <div class="benefit-icon d-flex align-items-center justify-content-center">
             <img src="icons/basil_document-solid.svg" alt="Document icon">
           </div>
           <div class="text-start">
-            <h4 class="mb-1">Документы, депозиты, фальшивые объекты</h4>
-            <p class="mb-0">💧 Интерактивный гайд и проверенные брокеры</p>
+            <h4 class="mb-1" data-i18n="benefits.rent.doc">Документы, депозиты, фальшивые объекты</h4>
+            <p class="mb-0" data-i18n="benefits.rent.doc_desc">💧 Интерактивный гайд и проверенные брокеры</p>
           </div>
         </div>
 
@@ -131,8 +151,8 @@
             <img src="icons/ion_call.svg" alt="Call icon">
           </div>
           <div class="text-start">
-            <h4 class="mb-1">Потеря времени на звонки</h4>
-            <p class="mb-0">💧 AI-подбор и мгновенный контакт</p>
+            <h4 class="mb-1" data-i18n="benefits.rent.calls">Потеря времени на звонки</h4>
+            <p class="mb-0" data-i18n="benefits.rent.calls_desc">💧 AI-подбор и мгновенный контакт</p>
           </div>
         </div>
 
@@ -141,23 +161,23 @@
             <img src="icons/fluent_payment-28-filled.svg" alt="Payment icon">
           </div>
           <div class="text-start">
-            <h4 class="mb-1">Скрытые комиссии</h4>
-            <p class="mb-0">💧 Прозрачная аналитика стоимости</p>
+            <h4 class="mb-1" data-i18n="benefits.rent.fees">Скрытые комиссии</h4>
+            <p class="mb-0" data-i18n="benefits.rent.fees_desc">💧 Прозрачная аналитика стоимости</p>
           </div>
         </div>
       </div>
 
       <!-- Покупка -->
       <div class="col-md-6 d-flex flex-column gap-4">
-        <h3 class="text-start">Покупка</h3>
+        <h3 class="text-start" data-i18n="services.buy.title">Покупка</h3>
 
         <div class="card p-3 d-flex flex-row align-items-start gap-3">
           <div class="benefit-icon d-flex align-items-center justify-content-center">
             <img src="icons/solar_calculator-bold.svg" alt="Calculator icon">
           </div>
           <div class="text-start">
-            <h4 class="mb-1">Сложно оценить доходность ROI</h4>
-            <p class="mb-0">💧 ROI-калькулятор и сравнение по районам</p>
+            <h4 class="mb-1" data-i18n="benefits.buy.roi">Сложно оценить доходность ROI</h4>
+            <p class="mb-0" data-i18n="benefits.buy.roi_desc">💧 ROI-калькулятор и сравнение по районам</p>
           </div>
         </div>
 
@@ -166,8 +186,8 @@
             <img src="icons/mingcute_time-fill.svg" alt="Time icon">
           </div>
           <div class="text-start">
-            <h4 class="mb-1">Долгий цикл сделки</h4>
-            <p class="mb-0">💧 Сопровождение сделки и проверенные продавцы</p>
+            <h4 class="mb-1" data-i18n="benefits.buy.time">Долгий цикл сделки</h4>
+            <p class="mb-0" data-i18n="benefits.buy.time_desc">💧 Сопровождение сделки и проверенные продавцы</p>
           </div>
         </div>
 
@@ -176,8 +196,8 @@
             <img src="icons/bi_houses-fill.svg" alt="Buildings icon">
           </div>
           <div class="text-start">
-            <h4 class="mb-1">Сложно найти тот самый объект</h4>
-            <p class="mb-0">💧 AI-поиск по всей базе рынка</p>
+            <h4 class="mb-1" data-i18n="benefits.buy.find">Сложно найти тот самый объект</h4>
+            <p class="mb-0" data-i18n="benefits.buy.find_desc">💧 AI-поиск по всей базе рынка</p>
           </div>
         </div>
       </div>
@@ -187,23 +207,26 @@
 </section>
 
 
+
 <!-- Why Real In Section -->
 <section class="why-real-in py-5 section-animate">
   <div class="container">
-    <h1 class="text-center mb-5">Почему Real In ?</h1>
+    <h1 class="text-center mb-5" data-i18n="why_real_in.title">Почему Real In ?</h1>
     <div class="row">
 
       <!-- Аренда -->
       <div class="col-md-6">
-        <h3>Аренда</h3>
+        <h3 data-i18n="services.rent.title">Аренда</h3>
         <div class="cards-wrapper">
           <div class="card">
             <div class="advantage-icon">
               <img src="icons/material-symbols_checklist-rounded.svg" alt="Checklist icon">
             </div>
             <div>
-              <h4>Гид по районам Дубая</h4>
-              <p>Сравни инфраструктуру, удобства, атмосферу для взвешенных решений.</p>
+              <h4 data-i18n="why_real_in.rent.guide">Гид по районам Дубая</h4>
+              <p data-i18n="why_real_in.rent.guide_desc">
+                Сравни инфраструктуру, удобства, атмосферу для взвешенных решений.
+              </p>
             </div>
           </div>
 
@@ -212,8 +235,10 @@
               <img src="icons/mingcute_search-ai-fill.svg" alt="AI search icon">
             </div>
             <div>
-              <h4>AI-чат в Telegram</h4>
-              <p>Понимает желания и мгновенно подбирает квартиры, которые совпадают с вашим образом жизни.</p>
+              <h4 data-i18n="why_real_in.rent.ai">AI-чат в Telegram</h4>
+              <p data-i18n="why_real_in.rent.ai_desc">
+                Понимает желания и мгновенно подбирает квартиры, которые совпадают с вашим образом жизни.
+              </p>
             </div>
           </div>
 
@@ -222,8 +247,10 @@
               <img src="icons/simple-line-icons_check.svg" alt="Check icon">
             </div>
             <div>
-              <h4>Реальные цены и честные условия</h4>
-              <p>Прозрачная аналитика рынка на карте. Скажем, если найдём дешевле.</p>
+              <h4 data-i18n="why_real_in.rent.prices">Реальные цены и честные условия</h4>
+              <p data-i18n="why_real_in.rent.prices_desc">
+                Прозрачная аналитика рынка на карте. Скажем, если найдём дешевле.
+              </p>
             </div>
           </div>
 
@@ -232,8 +259,10 @@
               <img src="icons/material-symbols-light_real-estate-agent.svg" alt="Real estate icon">
             </div>
             <div>
-              <h4>Только сертифицированные агенты</h4>
-              <p>Живой профиль брокера поможет совершить комфортную сделку</p>
+              <h4 data-i18n="why_real_in.rent.agents">Только сертифицированные агенты</h4>
+              <p data-i18n="why_real_in.rent.agents_desc">
+                Живой профиль брокера поможет совершить комфортную сделку
+              </p>
             </div>
           </div>
         </div>
@@ -241,15 +270,17 @@
 
       <!-- Покупка/Инвестиции -->
       <div class="col-md-6">
-        <h3>Покупка/инвестиции</h3>
+        <h3 data-i18n="services.buy.title">Покупка/инвестиции</h3>
         <div class="cards-wrapper">
           <div class="card">
             <div class="investment-icon">
               <img src="icons/fa7-solid_line-chart.svg" alt="Chart icon">
             </div>
             <div>
-              <h4>Прогноз доходности для каждой квартиры</h4>
-              <p>ROI-калькулятор и анализ инвестиционного потенциала</p>
+              <h4 data-i18n="why_real_in.buy.roi">Прогноз доходности для каждой квартиры</h4>
+              <p data-i18n="why_real_in.buy.roi_desc">
+                ROI-калькулятор и анализ инвестиционного потенциала
+              </p>
             </div>
           </div>
 
@@ -258,8 +289,10 @@
               <img src="icons/bi_houses-fill.svg" alt="Houses icon">
             </div>
             <div>
-              <h4>Объекты по стоимости 2021 г.</h4>
-              <p>Доступ к уникальным предложениям и distressed-сделкам со скидкой до 20%.</p>
+              <h4 data-i18n="why_real_in.buy.objects">Объекты по стоимости 2021 г.</h4>
+              <p data-i18n="why_real_in.buy.objects_desc">
+                Доступ к уникальным предложениям и distressed-сделкам со скидкой до 20%.
+              </p>
             </div>
           </div>
 
@@ -268,8 +301,10 @@
               <img src="icons/fluent_money-20-filled.svg" alt="Money icon">
             </div>
             <div>
-              <h4>Токенизация и криптоплатежи</h4>
-              <p>Мы создаём возможность покупки криптоплатежей. Хотите быть в числе первых?</p>
+              <h4 data-i18n="why_real_in.buy.token">Токенизация и криптоплатежи</h4>
+              <p data-i18n="why_real_in.buy.token_desc">
+                Мы создаём возможность покупки криптоплатежей. Хотите быть в числе первых?
+              </p>
             </div>
           </div>
         </div>
@@ -280,10 +315,11 @@
 </section>
 
 
+
 <!-- Statistics Section -->
 <section class="statistics py-5 section-animate">
   <div class="container text-center">
-    <h2 class="mb-4">
+    <h2 class="mb-4" data-i18n="statistics.title">
       Уже <span class="h2-strong">150 брокеров</span> и <span class="h2-strong">220 покупателей</span><br>
       в листе ожидания Real In
     </h2>
@@ -293,30 +329,27 @@
       <img src="images/avatar3.png" alt="User" class="avatar">
       <img src="images/avatar4.png" alt="User" class="avatar">
       <a href="https://telegram.me/real_in_bot?start=0babef20-4dbf-4907-abdb-f7f37f4d94fb" target="_blank">
-        <span class="plus-sign">
-            +
-        </span>
+        <span class="plus-sign">+</span>
       </a>
       <span class="more-users">364</span>
     </div>
   </div>
 </section>
 
-
 <!-- FAQ Section -->
 <section class="faq py-5 section-animate">
   <div class="container">
-    <h1 class="text-center mb-5">Часто задаваемые вопросы</h1>
+    <h1 class="text-center mb-5" data-i18n="faq.title">Часто задаваемые вопросы</h1>
     <div class="accordion" id="faqAccordion">
 
       <div class="accordion-item faq-item">
         <h2 class="accordion-header" id="faqHeading1">
-          <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+          <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1" data-i18n="faq.q1">
             Как гарантируется качество объектов?
           </button>
         </h2>
         <div id="faq1" class="accordion-collapse collapse faq-answer" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
+          <div class="accordion-body" data-i18n="faq.a1">
             Все объекты на платформе проходят тщательную проверку, чтобы обеспечить их подлинность и соответствие описанию. Мы сотрудничаем только с проверенными застройщиками и брокерами, которые соответствуют стандартам качества.
           </div>
         </div>
@@ -324,12 +357,12 @@
 
       <div class="accordion-item faq-item">
         <h2 class="accordion-header" id="faqHeading2">
-          <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+          <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2" data-i18n="faq.q2">
             Какие комиссии могут возникнуть при аренде или покупке?
           </button>
         </h2>
         <div id="faq2" class="accordion-collapse collapse faq-answer" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
+          <div class="accordion-body" data-i18n="faq.a2">
             Все возможные комиссии и дополнительные платежи оговариваются заранее и прозрачны для клиента. Мы гарантируем, что не будет скрытых сборов или неожиданных платежей.
           </div>
         </div>
@@ -337,12 +370,12 @@
 
       <div class="accordion-item faq-item">
         <h2 class="accordion-header" id="faqHeading3">
-          <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+          <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3" data-i18n="faq.q3">
             Как работает ROI-калькулятор для инвесторов?
           </button>
         </h2>
         <div id="faq3" class="accordion-collapse collapse faq-answer" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
+          <div class="accordion-body" data-i18n="faq.a3">
             Наш ROI-калькулятор помогает инвесторам оценить потенциальную доходность от сдачи объекта в аренду. Он учитывает различные параметры, такие как стоимость аренды, налоги, затраты на содержание и другую важную информацию. С его помощью вы сможете сравнить доходность по разным районам и типам недвижимости.
           </div>
         </div>
@@ -350,12 +383,12 @@
 
       <div class="accordion-item faq-item">
         <h2 class="accordion-header" id="faqHeading4">
-          <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+          <button class="accordion-button collapsed faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4" data-i18n="faq.q4">
             Как быстро можно найти подходящий объект?
           </button>
         </h2>
         <div id="faq4" class="accordion-collapse collapse faq-answer" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
+          <div class="accordion-body" data-i18n="faq.a4">
             Благодаря AI-чату и профессиональным брокерам поиск объектов на платформе Real In происходит быстро и эффективно. Среднее время поиска — от нескольких часов до нескольких дней, в зависимости от ваших предпочтений.
           </div>
         </div>
@@ -366,6 +399,7 @@
 </section>
 
 
+
 <!-- Final CTA Section -->
 <section class="final-cta py-5 section-animate">
   <div class="container">
@@ -373,7 +407,7 @@
 
       <!-- CTA Description -->
       <div class="col-lg-8 d-flex flex-column justify-content-center">
-        <h2 class="cta-text mb-4">
+        <h2 class="cta-text mb-4" data-i18n="cta.main">
           Скажи, что ищешь —<br>
           и мы найдём<br>
           <span class="highlight">твою квартиру в Дубае</span>
@@ -383,9 +417,12 @@
       <!-- CTA Buttons -->
       <div class="col-lg-4 d-flex flex-column justify-content-center">
         <div class="cta-buttons d-flex flex-column gap-3">
-          <a href="https://telegram.me/real_in_bot?start=0babef20-4dbf-4907-abdb-f7f37f4d94fb" target="_blank" class="btn btn-primary">
-            Хочу подобрать квартиру</a>
-          <a href="https://t.me/realin_ai" target="_blank" class="secondary-cta">Подписаться в Telegram</a>
+          <a href="https://telegram.me/real_in_bot?start=0babef20-4dbf-4907-abdb-f7f37f4d94fb" target="_blank" class="btn btn-primary" data-i18n="cta.button_primary">
+            Хочу подобрать квартиру
+          </a>
+          <a href="https://t.me/realin_ai" target="_blank" class="secondary-cta" data-i18n="cta.button_secondary">
+            Подписаться в Telegram
+          </a>
         </div>
       </div>
 
@@ -397,20 +434,19 @@
 <!-- Form Section -->
 <section class="form-section py-5 section-animate">
   <div class="container">
-    <h3 class="text-center mb-3">5 актуальных квартир уже сегодня</h3>
-    <p class="text-center mb-4">Подберем объекты для покупки или аренды в Дубае</p>
+    <h3 class="text-center mb-3" data-i18n="form.title">5 актуальных квартир уже сегодня</h3>
+    <p class="text-center mb-4" data-i18n="form.description">Подберем объекты для покупки или аренды в Дубае</p>
     <form action="https://formspree.io/f/real.in.telegram.app@gmail.com" method="POST" class="contact-form mx-auto" style="max-width:600px;">
       <div class="form-inputs mb-3 d-flex gap-3 flex-column flex-md-row">
-        <input type="text" name="name" placeholder="Ваше имя" class="form-input" required>
-        <input type="text" name="contact" placeholder="Telegram/Whatsapp/Email" class="form-input" required>
+        <input type="text" name="name" placeholder="" class="form-input" required data-i18n="[placeholder]form.name_placeholder">
+        <input type="text" name="contact" placeholder="" class="form-input" required data-i18n="[placeholder]form.contact_placeholder">
       </div>
       <input type="hidden" name="_subject" value="Новая заявка с Real In Landing">
       <input type="hidden" name="_next" value="#thank-you">
-      <button type="submit" class="final-button btn btn-primary w-100">Отправить</button>
+      <button type="submit" class="final-button btn btn-primary w-100" data-i18n="form.submit">Отправить</button>
     </form>
   </div>
 </section>
-
 
 
 <!-- Footer -->
@@ -424,19 +460,17 @@
 
             <!-- Links -->
             <div class="footer-links">
-                <a href="https://t.me/realin_ai" target="_blank" rel="noopener noreferrer">О проекте</a>
-                <a href="https://telegram.me/real_in_bot?start=0786f2c9-9421-400b-bcdb-b570aca84898" target="_blank" rel="noopener noreferrer">Контакты</a>
+                <a href="https://t.me/realin_ai" target="_blank" rel="noopener noreferrer" data-i18n="footer.about">О проекте</a>
+                <a href="https://telegram.me/real_in_bot?start=0786f2c9-9421-400b-bcdb-b570aca84898" target="_blank" rel="noopener noreferrer" data-i18n="footer.contacts">Контакты</a>
             </div>
 
             <!-- Copyright -->
             <div class="footer-copyright">
-                © <span id="current-year">2025</span> Real In. Все права защищены
+                © <span id="current-year">2025</span> <span data-i18n="footer.copyright">Real In. Все права защищены</span>
             </div>
         </div>
     </div>
 </footer>
-
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
