@@ -17,7 +17,7 @@ app = Bottle()
 
 
 # Обработчик отправки формы
-@app.route('/send', method='POST')
+@app.route('/send_email', method='POST')
 def send_email():
     name = request.forms.get('name')
     contact = request.forms.get('contact')
