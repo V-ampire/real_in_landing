@@ -17,7 +17,7 @@ app = Bottle()
 
 
 # Обработчик отправки формы
-@app.route('/send_email', method='POST')
+@app.route('/send', method='POST')
 def send_email():
     name = request.forms.get('name')
     contact = request.forms.get('contact')
@@ -42,10 +42,10 @@ def send_email():
         server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         server.send_message(msg)
         server.quit()
-        # Редирект на _next
-        return redirect(request.forms.get('_next', '/'))
+        # Сообщение пользователю
+        return "<h3>Спасибо! Ваша заявка отправлена.</h3>"
     except Exception as e:
-        return f"Ошибка при отправке email: {e}"
+        return f"<h3>Ошибка при отправке email: {e}</h3>"
 
 if __name__ == "__main__":
     run(app, host='localhost', port=8080, debug=True)
