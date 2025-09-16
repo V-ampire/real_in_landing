@@ -2,7 +2,8 @@ let polyglot;
 
 // Загрузка переводов и применение их к элементам с data-i18n
 async function loadTranslations(lang) {
-    const response = await fetch(`i18n/${lang}.json`);
+    const locale_path = is_broker_page ? `i18n/broker_${lang}.json` : `i18n/${lang}.json`;
+    const response = await fetch(locale_path);
     const phrases = await response.json();
     polyglot = new Polyglot({ phrases });
 
