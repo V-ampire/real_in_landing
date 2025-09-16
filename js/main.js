@@ -1,24 +1,34 @@
 const p = document.getElementById('animated-text');
-const text = p.textContent;
 const typingSpeed = 100; // скорость набора в миллисекундах
 const delayBetween = 5000; // пауза между повтором в мс
 
+let typingTimeout;
+
 function typeText() {
+    // Берем текущий текст из polyglot
+    const text = polyglot ? polyglot.t('hero.animated_text') : p.textContent;
     p.textContent = ''; // очистка текста
     let i = 0;
 
-    const interval = setInterval(() => {
-        p.textContent += text[i];
-        i++;
-        if (i === text.length) {
-        clearInterval(interval);
-        // через delayBetween мс снова запускаем анимацию
-        setTimeout(typeText, delayBetween);
+    function typeChar() {
+        if (i < text.length) {
+            p.textContent += text[i];
+            i++;
+            typingTimeout = setTimeout(typeChar, typingSpeed);
+        } else {
+            // через delayBetween мс снова запускаем анимацию
+            typingTimeout = setTimeout(typeText, delayBetween);
         }
-    }, typingSpeed);
+    }
+
+    typeChar();
 }
 
-
+// Перезапуск анимации при смене языка
+function restartTyping() {
+    clearTimeout(typingTimeout);
+    typeText();
+}
 
 document.addEventListener("DOMContentLoaded", () => {
 const sections = document.querySelectorAll('.section-animate');

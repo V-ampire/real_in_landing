@@ -24,6 +24,8 @@ async function loadTranslations(lang) {
     if(mobileApp){
         mobileApp.src = lang === 'ru' ? 'images/mobile-app-ru.png' : 'images/mobile-app-en.png';
     }
+
+    restartTyping();
 }
 
 // Установка языка: сохраняем и применяем
