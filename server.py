@@ -1,42 +1,38 @@
-from bottle import Bottle, run, request, template
+from bottle import Bottle, run, request, redirect
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import json
 
-# Чтение секретов из файла
+# Чтение секретов
 with open('secrets.json', 'r') as f:
     secrets = json.load(f)
 
 EMAIL_ADDRESS = secrets['email']
 EMAIL_PASSWORD = secrets['password']
-
-SMTP_SERVER = 'smtp.gmail.com'
-SMTP_PORT = 587
+SMTP_SERVER = secrets.get('smtp_server', 'smtp.gmail.com')
+SMTP_PORT = secrets.get('smtp_port', 587)
 
 app = Bottle()
 
-@app.route('/')
-def index():
-    return template('''
-        <form action="/send" method="post">
-            To: <input name="to" type="email" required/><br/>
-            Subject: <input name="subject" type="text" required/><br/>
-            Message:<br/>
-            <textarea name="message" rows="5" cols="40" required></textarea><br/>
-            <input value="Send" type="submit" />
-        </form>
-    ''')
 
-@app.route('/send', method='POST')
+# Обработчик отправки формы
+@app.route('/send_email', method='POST')
 def send_email():
-    to_address = request.forms.get('to')
-    subject = request.forms.get('subject')
-    message_body = request.forms.get('message')
+    name = request.forms.get('name')
+    contact = request.forms.get('contact')
+    subject = request.forms.get('_subject', 'Новая заявка с сайта')
+    from_broker_page = request.forms.get('from_broker_page', 'не указано')
+
+    # Текст письма
+    message_body = f"""Новая заявка:
+Имя: {name}
+Контакт: {contact}
+Источник страницы (from_broker_page): {from_broker_page}"""
 
     msg = MIMEMultipart()
     msg['From'] = EMAIL_ADDRESS
-    msg['To'] = to_address
+    msg['To'] = EMAIL_ADDRESS
     msg['Subject'] = subject
     msg.attach(MIMEText(message_body, 'plain'))
 
@@ -46,9 +42,10 @@ def send_email():
         server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         server.send_message(msg)
         server.quit()
-        return "Email sent successfully!"
+        # Редирект на _next
+        return redirect(request.forms.get('_next', '/'))
     except Exception as e:
-        return f"Failed to send email: {e}"
+        return f"Ошибка при отправке email: {e}"
 
 if __name__ == "__main__":
     run(app, host='localhost', port=8080, debug=True)
