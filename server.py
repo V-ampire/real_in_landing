@@ -11,6 +11,7 @@ with open('secrets.json', 'r') as f:
     secrets = json.load(f)
 
 EMAIL_ADDRESS = secrets['email']
+TARGET_ADDRESS = secrets['target_email']
 EMAIL_PASSWORD = secrets['password']
 SMTP_SERVER = secrets.get('smtp_server', 'smtp.gmail.com')
 SMTP_PORT = secrets.get('smtp_port', 587)
@@ -36,7 +37,7 @@ def send_email():
 
     msg = MIMEMultipart()
     msg['From'] = EMAIL_ADDRESS
-    msg['To'] = EMAIL_ADDRESS
+    msg['To'] = TARGET_ADDRESS
     msg['Subject'] = subject
     msg.attach(MIMEText(message_body, 'plain'))
 
