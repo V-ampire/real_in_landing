@@ -1,3 +1,5 @@
 design/
 .idea/
 secrets.json
+
+__pycache__
