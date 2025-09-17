@@ -3,6 +3,8 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import json
+import logging
+
 
 # Чтение секретов
 with open('secrets.json', 'r') as f:
@@ -12,6 +14,8 @@ EMAIL_ADDRESS = secrets['email']
 EMAIL_PASSWORD = secrets['password']
 SMTP_SERVER = secrets.get('smtp_server', 'smtp.gmail.com')
 SMTP_PORT = secrets.get('smtp_port', 587)
+
+logger = logging.getLogger(__name__)
 
 app = Bottle()
 
@@ -45,7 +49,8 @@ def send_email():
         # Сообщение пользователю
         return "<h3>Спасибо! Ваша заявка отправлена.</h3>"
     except Exception as e:
-        return f"<h3>Ошибка при отправке email: {e}</h3>"
+        logger.exception(e)
+        return f"<h3>Ошибка при отправке email</h3>"
 
 if __name__ == "__main__":
     run(app, host='localhost', port=8080, debug=True)
