@@ -5,7 +5,8 @@
   "hero.book_button": "Забронировать бесплатный подбор",
   "hero.smart_search_title": "Умный поиск недвижимости в Telegram",
   "hero.animated_text": "Интересует пентхаус в Downtown с доходностью 8% годовых. Ищу виллу с бассейном в Palm Jumeirah для семьи.",
-  "services.title": "Real In <br>экосистема для работы с недвижимостью нового поколения",
+  "services.title": "Real In <br>",
+  "services.title.highlight": "экосистема для работы с недвижимостью нового поколения",
   "services.rent.title": "Аренда",
   "services.rent.text": "Найдём идеальную квартиру для жизни с полным сопровождением сделки",
   "services.rent.btn": "Подобрать",
@@ -61,7 +62,5 @@
   "footer.about": "О проекте",
   "footer.contacts": "Контакты",
   "footer.copyright": "Real In. Все права защищены.",
-  "footer.broker": "Для брокера",
-  "notification.successText": "Спасибо, ваша заявка отправлена! Мы свяяжемся с вами в самое ближайшее время!",
-  "notification.failText": "Что-то пошло не так, попробуйте позже или напишите нам "
+  "footer.broker": "Для брокера"
 }
