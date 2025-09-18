@@ -61,5 +61,7 @@
   "footer.about": "О проекте",
   "footer.contacts": "Контакты",
   "footer.copyright": "Real In. Все права защищены.",
-  "footer.broker": "Для брокера"
+  "footer.broker": "Для брокера",
+  "notification.successText": "Спасибо, ваша заявка отправлена! Мы свяяжемся с вами в самое ближайшее время!",
+  "notification.failText": "Что-то пошло не так, попробуйте позже или напишите нам "
 }

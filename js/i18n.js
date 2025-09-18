@@ -1,3 +1,5 @@
+let polyglot = null;
+
 // Загрузка переводов и применение их к элементам с data-i18n
 async function loadTranslations(lang) {
     const locale_path = is_broker_page ? `i18n/broker_${lang}.json` : `i18n/${lang}.json`;
