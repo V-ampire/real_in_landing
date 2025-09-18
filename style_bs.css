@@ -315,6 +315,15 @@ header .logo img {
 }
 
 
+#animated-text::after {
+  content: '';
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+
 /* Benefits Section */
 .benefits h1 {
     font-family: 'Unbounded', sans-serif;

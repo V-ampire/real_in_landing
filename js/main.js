@@ -1,28 +1,50 @@
 const p = document.getElementById('animated-text');
 const typingSpeed = 100; // скорость набора в миллисекундах
-const delayBetween = 5000; // пауза между повтором в мс
+const delayBetween = 2000; // пауза между повтором в мс
 
 let typingTimeout;
 
+
 function typeText() {
-    // Берем текущий текст из polyglot
     const text = polyglot ? polyglot.t('hero.animated_text') : p.textContent;
-    p.textContent = ''; // очистка текста
-    let i = 0;
+
+    // Разбиваем на предложения
+    const sentences = text
+        .split(/(?<=[.!?])\s+/)
+        .filter(Boolean)
+        .map(s => s.trim());
+
+    let sentenceIndex = 0;
+    let charIndex = 0;
 
     function typeChar() {
-        if (i < text.length) {
-            p.textContent += text[i];
-            i++;
+        const currentSentence = sentences[sentenceIndex];
+
+        if (charIndex < currentSentence.length) {
+            p.textContent = currentSentence.slice(0, charIndex + 1) + '│'; // курсор
+            charIndex++;
             typingTimeout = setTimeout(typeChar, typingSpeed);
         } else {
-            // через delayBetween мс снова запускаем анимацию
-            typingTimeout = setTimeout(typeText, delayBetween);
+            // закончили предложение — оставляем курсор в конце
+            p.textContent = currentSentence + '│';
+            sentenceIndex++;
+            charIndex = 0;
+
+            if (sentenceIndex < sentences.length) {
+                typingTimeout = setTimeout(() => {
+                    p.textContent = ''; // очищаем перед следующим предложением
+                    typeChar();
+                }, delayBetween);
+            } else {
+                typingTimeout = setTimeout(typeText, delayBetween);
+            }
         }
     }
 
     typeChar();
 }
+
+
 
 // Перезапуск анимации при смене языка
 function restartTyping() {
