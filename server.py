@@ -48,10 +48,10 @@ def send_email():
         server.send_message(msg)
         server.quit()
         # Сообщение пользователю
-        redirect('/?email_sent=success')
+        return redirect('/?email_sent=success')
     except Exception as e:
         logger.exception(e)
-        redirect('/?email_sent=fail')
+        return redirect('/?email_sent=fail')
 
 if __name__ == "__main__":
     run(app, host='localhost', port=8080, debug=True)
