@@ -47,11 +47,12 @@ def send_email():
         server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         server.send_message(msg)
         server.quit()
-        # Сообщение пользователю
-        return redirect('/?email_sent=success')
+        redirect_url = '/?email_sent=success'
     except Exception as e:
         logger.exception(e)
-        return redirect('/?email_sent=fail')
+        redirect_url = '/?email_sent=fail'
+        
+    return redirect(redirect_url)
 
 if __name__ == "__main__":
     run(app, host='localhost', port=8080, debug=True)
