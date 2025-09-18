@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const params = new URLSearchParams(window.location.search);
-  //const raw = params.get('email_sent');
-  const raw = 'success'
+  const raw = params.get('email_sent');
+  //const raw = 'success'
   if (!raw) return; // параметр отсутствует или пустой — ничего не показываем
 
   const val = raw.trim().toLowerCase();
