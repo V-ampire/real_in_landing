@@ -90,7 +90,7 @@ body {
 }
 
 /* Контейнер шире */
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .container {
     max-width: 106.25rem; /* 1700px / 16 */
   }
@@ -245,7 +245,7 @@ img {
     border-radius: 1.25rem; /* 20px */
 }
 
-.main-logo {
+.logo img {
     border-radius: 0px;
 }
 
