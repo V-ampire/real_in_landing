@@ -90,7 +90,7 @@ body {
 }
 
 /* Контейнер шире */
-@media (min-width: 1600px) {
+@media (min-width: 1700px) {
   .container {
     max-width: 106.25rem; /* 1700px / 16 */
   }
